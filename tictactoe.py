@@ -8,6 +8,21 @@ X = "X"
 O = "O"
 EMPTY = None
 
+empty_board = [[None, None, None],
+                [None, None, None],
+                [None, None, None]]
+
+one_move = [["X", None, None],
+                [None, None, None],
+                [None, None, None]]
+
+two_moves = [["X", None, None],
+                [None, "O", None],
+                [None, None, None]]
+
+full_board = [["X", "O", "X"],
+                ["X", "O", "X"],
+                ["O", "X", "O"]]
 
 def initial_state():
     """
@@ -26,14 +41,14 @@ def player(board):
     move_count = 0
 
     for row in board:
-        for column in row:
-            if board[row][column] is not None:
+        for space in row:
+            if space is not None:
                 move_count +=1
 
     if move_count % 2 == 0:
-        return X
+        return "X"
     else:
-        return O
+        return "O"
 
 
 def actions(board):
