@@ -24,9 +24,17 @@ full_board_no_win = [["X", "O", "X"],
                     ["X", "O", "X"],
                     ["O", "X", "O"]]
                 
-full_board_X_wins = [["X", "X", "X"],
+full_board_X_row = [["X", "X", "X"],
                     ["X", "O", "O"],
                     ["O", "X", "O"]]
+
+full_board_X_row_2 = [["X", "O", "O"],
+                        ["X", "X", "X"],
+                        ["O", "X", "O"]]              
+
+full_board_X_row_3 = [["X", "O", "O"],
+                        ["O", "X", "O"],
+                        ["X", "X", "X"]]         
 
 full_board_O_wins = [["O", "X", "X"],
                     ["X", "O", "X"],
@@ -97,7 +105,13 @@ def utility(board):
     """
     Returns 1 if X has won the game, -1 if O has won, 0 otherwise.
     """
-    raise NotImplementedError
+
+    # Check rows
+    for row in board:
+        if row[0] == row[1] and row[1] == row[2]:
+            return 1 if row[0] == "X" else -1
+
+    return 0
 
 
 def minimax(board):
