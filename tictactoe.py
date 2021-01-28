@@ -20,9 +20,17 @@ two_moves = [["X", None, None],
                 [None, "O", None],
                 [None, None, None]]
 
-full_board = [["X", "O", "X"],
-                ["X", "O", "X"],
-                ["O", "X", "O"]]
+full_board_no_win = [["X", "O", "X"],
+                    ["X", "O", "X"],
+                    ["O", "X", "O"]]
+                
+full_board_X_wins = [["X", "X", "X"],
+                    ["X", "O", "O"],
+                    ["O", "X", "O"]]
+
+full_board_O_wins = [["O", "X", "X"],
+                    ["X", "O", "X"],
+                    ["X", "O", "O"]]
 
 def initial_state():
     """
@@ -96,4 +104,12 @@ def minimax(board):
     """
     Returns the optimal action for the current player on the board.
     """
+
+    # for max player
+
+    # if terminal, return utility
+    # else v = -inf
+    # then loop over possible actions looking for one which provides max value
+
+    #min and max call each other recursively. Just like a real game between humans
     raise NotImplementedError
