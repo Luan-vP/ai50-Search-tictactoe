@@ -73,8 +73,7 @@ def utility(board):
     """
     Returns 1 if X has won the game, -1 if O has won, 0 otherwise.
     """
-
-    # Check rows
+    
     for row in board:
         if row[0] == row[1] and row[1] == row[2]:
             return 1 if row[0] == "X" else -1
@@ -83,6 +82,10 @@ def utility(board):
         if column[0] == column[1] and column[1] == column[2]:
             return 1 if column[0] == "X" else -1
     
+    # Check diagonals
+    if ( board[0][0] == board[1][1] and board[1][1] == board[2][2] ) or ( board[0][2] == board[1][1] and board[1][1] == board[2][0] ):
+        return 1 if board[1][1] == "X" else -1
+
     return 0
 
 

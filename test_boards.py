@@ -34,6 +34,10 @@ full_board_O_diagonal_1 = [["O", "X", "X"],
                             ["X", "O", "X"],
                             ["X", "O", "O"]]
 
+full_board_O_diagonal_2 = [["O", "X", "O"],
+                            ["X", "O", "X"],
+                            ["O", "O", "X"]]
+
 full_board_X_column_1 = [["X", "X", "O"],
                         ["X", "O", "X"],
                         ["X", "O", "O"]]
@@ -46,4 +50,10 @@ full_board_X_column_3 = [["O", "X", "X"],
                         ["X", "O", "X"],
                         ["O", "O", "X"]]
 
-                        
+full_board_X_diagonal_1 = [["O", "X", "X"],
+                            ["O", "X", "O"],
+                            ["X", "O", "X"]]
+
+full_board_X_diagonal_2 = [["X", "O", "X"],
+                            ["O", "X", "O"],
+                            ["X", "O", "X"]]
