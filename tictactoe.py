@@ -8,38 +8,6 @@ X = "X"
 O = "O"
 EMPTY = None
 
-empty_board = [[None, None, None],
-                [None, None, None],
-                [None, None, None]]
-
-one_move = [["X", None, None],
-                [None, None, None],
-                [None, None, None]]
-
-two_moves = [["X", None, None],
-                [None, "O", None],
-                [None, None, None]]
-
-full_board_no_win = [["X", "O", "X"],
-                    ["X", "O", "X"],
-                    ["O", "X", "O"]]
-                
-full_board_X_row = [["X", "X", "X"],
-                    ["X", "O", "O"],
-                    ["O", "X", "O"]]
-
-full_board_X_row_2 = [["X", "O", "O"],
-                        ["X", "X", "X"],
-                        ["O", "X", "O"]]              
-
-full_board_X_row_3 = [["X", "O", "O"],
-                        ["O", "X", "O"],
-                        ["X", "X", "X"]]         
-
-full_board_O_wins = [["O", "X", "X"],
-                    ["X", "O", "X"],
-                    ["X", "O", "O"]]
-
 def initial_state():
     """
     Returns starting state of the board.
@@ -111,6 +79,10 @@ def utility(board):
         if row[0] == row[1] and row[1] == row[2]:
             return 1 if row[0] == "X" else -1
 
+    for column in zip(*board):
+        if column[0] == column[1] and column[1] == column[2]:
+            return 1 if column[0] == "X" else -1
+    
     return 0
 
 
