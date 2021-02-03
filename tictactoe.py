@@ -31,9 +31,9 @@ def player(board):
                 move_count +=1
 
     if move_count % 2 == 0:
-        return "X"
+        return X
     else:
-        return "O"
+        return O
 
 
 def actions(board):
